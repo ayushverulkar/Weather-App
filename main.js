@@ -2,10 +2,10 @@
 const API_KEY= "f730dd16700703fa6944e682ef116b0f";
 const DAYS_OF_THE_WEEK = ["sun","mon","tue","wed","thu","fri","sat"];
 
-const getCitiesUsingGeolocation =async(searchText)=> {
-    const response=await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchText}&limit=5&appid=${API_KEY}`) ;
-    return response.json();
-}
+// const getCitiesUsingGeolocation =async(searchText)=> {
+//     const response=await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchText}&limit=5&appid=${API_KEY}`) ;
+//     return response.json();
+// }
 
 
 
@@ -108,14 +108,14 @@ const loadHumidity = ({main:{humidity}})=>{
     let container = document.querySelector("#humidity");
     container.querySelector(".humidity-value").textContent = `${humidity} %`;
 }
-const onSearchChange = (event)=>{
-    let {value}=event.target;
-    getCitiesUsingGeolocation(value);
-}
+// const onSearchChange = (event)=>{
+//     let {value}=event.target;
+//     getCitiesUsingGeolocation(value);
+// }
 document.addEventListener("DOMContentLoaded",async ()=>{
 
-    const searchInput=document.querySelector("#search");
-    searchInput.addEventListener("input",)
+    // const searchInput=document.querySelector("#search");
+    // searchInput.addEventListener("input",)
     const currentWeather= await getCurrentWeatherData();
     loadCurrentForecast(currentWeather)
     const hourlyForecast = await gethourlyForecast(currentWeather);
